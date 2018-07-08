@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carson Howard</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <span class="brand">Carson Howard</span>
+      <ul class="menu">
+        <li class="menu-item selected">
+          <button onclick="onNavigate(event, 'about');">About</button>
+        </li>
+        <li class="menu-item">
+          <button onclick="onNavigate(event, 'resume');">Resume</button>
+        </li>
+        <li class="menu-item">
+          <Button onclick="onNavigate(event, 'contact');">Contact</Button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <div id="about" class="content-container">
+        <img class="me" alt="This is me" src="at_desk.png" />
+        <p>
+          My name is Carson Howard. I am a passionate Software Developer
+          with a love for all things code. I find myself constantly pursuing a better
+          way to write clean, maintainable, software. Books like
+          <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1_sspa?ie=UTF8&qid=1531012922&sr=8-1-spons&keywords=clean+code&psc=1">
+          <em>Clean Code</em>
+          </a>
+          by Bob Martin
+          and the
+          <a href="https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master-ebook/dp/B003GCTQAE">
+          <em>Pragmatic Programmer</em>
+          </a>
+          by Andy Hunt and Dave Thomas have been a major
+          inspiration for me.
+        </p>
+        <p>
+          I also enjoy teaching. I have been a Teacher's Assistant as well as an
+          Instructor for the University of Arizona MERN Stack Bootcamp through Trilogy
+          Education. As an Instructor I get to share my knowledge and passion with a group of
+          talented individuals who are looking to start their journey into the world of
+          software development.
+        </p>
+      </div>
+      <div id="resume" class="content-container hidden">
+        
+      </div>
+
+      <div id="contact" class="content-container hidden">
+      
+      </div>
+    </div>
+
+    <script>
+      var sections = {
+        resume: document.getElementById('resume'),
+        about: document.getElementById('about'),
+        contact: document.getElementById('contact')
+      };
+
+      function unhideSection(section) {
+        sections[section].classList.remove('hidden');
+      }
+
+      function hideOtherSections(shownSection) {
+        const otherSections = Object.keys(sections).filter(s => s !== shownSection);
+        for (var s of otherSections) {
+          sections[s].classList.add('hidden');
+        }
+      }
+
+      function onNavigate(e, selectedSection) {
+        e.preventDefault();
+
+        for (var element of document.getElementsByClassName('menu-item')) {
+          element.classList.remove('selected');
+        }
+
+        e.target.parentElement.classList.add('selected');
+
+        unhideSection(selectedSection);
+        hideOtherSections(selectedSection);
+      }
+    </script>
+  </body>
+</html>

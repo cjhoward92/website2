@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+  width: 100%;
+  height: 100%;
+}
+
+/* background: #47f773 */
+body {
+  background-image: url("coast-min.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: black;
+  display: flex;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 24px;
+  flex-grow: 1;
+  height: 100%;
+  vertical-align: center;
+  padding-left: 20px;
+  padding-top: 15px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.menu li {
+  display: flex;
+  margin: 5;
+  justify-content: center;
+  flex-direction: column;
+  width: 100px;
+  text-align: center;
+  vertical-align: center;
+  margin: 3px;
+  border: thin solid black;
+  height: 100%;
+}
+
+.menu li:hover {
+  background: darkolivegreen;
+  transition: ease .2s;
+}
+
+.selected {
+  background: darkolivegreen;
+}
+
+.selected button {
+  color: #fff;
+}
+
+.menu li button {
+  border: none;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+}
+
+.menu li button:hover {
+  border: none;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+}
+
+.menu li button:focus {
+  border: none;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  outline: none;
+}
+
+.menu li button:active {
+  border: none;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  outline: none;
+}
+
+.main-content {
+  margin-top: 60px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.content-container {
+  background: #f1f1f19a;
+  border: thin solid #777;
+  box-shadow: 5px 5px 5px #5555559a;
+  border-radius: 10px;
+  width: 100%;
+  height: 550px;
+  overflow-y: scroll;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.content-container p {
+  display: inline-block;
+  margin: 20px auto;
+  max-width: 550px;
+}
+
+.me {
+  border-radius: 50%;
+  height: 128px;
+  width: 128px;
+  margin: 0 auto;
+  opacity: 1 !important;
+}
+
+.hidden {
+  display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 10px; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+@media screen and (max-width: 600px) {
+  .header {
+    height: 100px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .brand {
+    font-weight: bold;
+    font-size: 24px;
+    height: 35px;
+    width: 100%;
+    text-align: center;
+    vertical-align: center;
+    margin: 0 auto;
+    padding: 15px 0 0 0;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+  }
+
+  .menu li {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100px;
+    text-align: center;
+    vertical-align: center;
+    margin: 3px;
+    border: thin solid black;
+    height: 45px;
+  }
+
+  .main-content {
+    margin-top: 110px;
+  }
+
+  .content-container {
+    width: 100%;
+    margin: 20px;
+    height: 500px;
+  }
+}
